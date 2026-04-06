@@ -52,8 +52,6 @@ class Planet {
     this.canvas.fillStyle = this.color
     this.canvas.fill()
     this.canvas.closePath()
-
-    this.children.forEach(child => child.render())
   }
 
   move() {
