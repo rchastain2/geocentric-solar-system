@@ -27,7 +27,7 @@ class Planet {
       this.isAttached = true
       const { centerObject, distance, period } = orbit
 
-      centerObject.registerChildren(this)
+      centerObject.registerChild(this)
       this.centerObject = centerObject
       this.distance = distance * distanceScale
       this.speed = 2 * Math.PI / period * speedScale
@@ -41,7 +41,7 @@ class Planet {
     this.color = options.color
   }
 
-  registerChildren(planet) {
+  registerChild(planet) {
     this.children.push(planet)
   }
 
