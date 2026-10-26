@@ -87,13 +87,8 @@ function createCanvas() {
 }
 
 function clear() {
-  /* Create the gradient */
-  const gradient = ctx.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width)
-  gradient.addColorStop(0, "rgba(18,18,18,0.5)")
-  gradient.addColorStop(1, "rgba(18,18,18,0.5)")
-
-  /* Add the gradient to the canvas */
-  ctx.fillStyle = gradient
+  /* Cover the previous frame with a semi-transparent veil, leaving fading trails */
+  ctx.fillStyle = "rgba(18,18,18,0.5)"
   ctx.fillRect(0, 0, canvas.width, canvas.height)
 }
 
@@ -114,7 +109,7 @@ let neptune = new Planet(ctx, { color: "#c6d3e3", radius: 10 }, { centerObject: 
 
 
 function update() {
-  /* Clear the background */
+  /* Fade the previous frame */
   clear()
 
   earth.move()
